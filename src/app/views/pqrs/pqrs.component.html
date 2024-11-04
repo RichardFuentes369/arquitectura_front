@@ -1,12 +1,10 @@
 <div class="">
   <div class="col-sm-12 row">
-    <div class="text-center">
+    <div class="text-center mb-4 sticky-top" style="top: 5rem;">
       <h2>Pqrs registradas en el sistema</h2>
+      <app-filtro-pqrs (campos)="camposFiltro($event)"></app-filtro-pqrs>
     </div>
-    <div class="col-sm-4 my-auto">
-      <app-filtro-pqrs></app-filtro-pqrs>
-    </div>
-    <div class="col-sm screen-size">
+    <div class="mt-5">
       <app-lista-pqrs></app-lista-pqrs>
     </div>
   </div>

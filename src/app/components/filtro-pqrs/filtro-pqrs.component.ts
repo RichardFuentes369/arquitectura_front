@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,8 +15,9 @@ export class FiltroPqrsComponent {
     _dni: ''
   }
 
+  @Output() campos = new EventEmitter<any>();
   filtrarEstado(){
-    console.log('aqui estoy')
+    this.campos.emit(this.model);
   }
 
 }

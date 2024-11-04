@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { PqrsService } from '../../service/pqrs.service'
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-lista-pqrs',
@@ -20,12 +21,41 @@ export class ListaPqrsComponent implements OnInit{
 
   async ngOnInit() {
     this._misSolicitudes = []
-    let peticion = await this._pqrsService.getDataPQRS()
-    if(peticion.data.Lista.length > 0){
+    let peticion = await this._pqrsService.getDataPQRS('','')
+    if(peticion.data.Lista != null){
       for (const objeto of peticion.data.Lista) {
         objeto.collapse = false
         this._misSolicitudes.push(objeto)
       }
+    }else{
+      Swal.fire({
+        title: 'Advertencia!',
+        text: 'No hay pqrs creadas en el sistema',
+        icon: 'warning',
+        confirmButtonText: 'Cerrar'
+      })
+    }
+  }
+
+  async filtrarLista(
+    _nroRadicado:string,
+    _dni:string
+  ){
+    this._misSolicitudes = []
+    let peticion = await this._pqrsService.getDataPQRS(_nroRadicado,_dni)
+    if(peticion.data.Lista && peticion.data.Lista.length > 0){
+      for (const objeto of peticion.data.Lista) {
+        objeto.collapse = false
+        this._misSolicitudes.push(objeto)
+      }
+    }else{
+      let msg = peticion.data.Mensaje
+      Swal.fire({
+        title: 'Error!',
+        text: msg,
+        icon: 'error',
+        confirmButtonText: 'Cerrar'
+      })
     }
   }
 
