@@ -1,0 +1,49 @@
+<div class="">
+
+  <div class="col-sm-12 container">
+    @for (pqrs of _misSolicitudes; track pqrs;) {
+    <div class="mt-2 card shadow-sm">
+      <div class="card-header">
+        <div class="col-sm-12 row">
+          <div class="col-sm-6">
+            Radicado No: {{pqrs._nroRadicado}} <br>
+            Estado: {{pqrs._estado}} <br>
+          </div>
+          <div class="col-sm-6">
+            Emisor: {{pqrs._propietario.nombres}} {{pqrs._propietario.apellidos}} <br>
+            Telefono: {{pqrs._propietario.contacto}} <br>
+            Correo: {{pqrs._propietario.email}}
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        {{pqrs._radicado.asunto}} <br>
+        {{pqrs._radicado.descripcion}} <br>
+        <br>
+        Trazabilidad:
+        <span class="badge bg-primary rounded-pill">
+          {{pqrs._trazabilidad.length}}
+        </span>
+
+        <a class="mx-2 btn btn-sm btn-primary" (click)="mostrarOcultarCollapse(pqrs._nroRadicado)" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
+          Mostrar
+        </a>
+
+        <br><br>
+
+        <div class="collapse" id="collapse{{pqrs._nroRadicado}}">
+          <div class="card card-body">
+            @for (trazabilidad of pqrs._trazabilidad; track trazabilidad;) {
+              *
+              {{trazabilidad.estado}}
+              {{trazabilidad.respuesta}}
+              {{trazabilidad.actualizacion}} <br>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+
+</div>

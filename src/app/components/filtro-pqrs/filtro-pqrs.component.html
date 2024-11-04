@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div class="card">
+    <div class="card-header">
+      filtros pqrs
+    </div>
+
+    <div class="card-body">
+
+      <div class="">
+        <div class="form-floating mb-2">
+          <input type="email" class="form-control" id="_nroRadicado" placeholder="name@example.com" [(ngModel)]="model._nroRadicado">
+          <label for="_nroRadicado">Número de radicado</label>
+        </div>
+      </div>
+      <div class="">
+        <div class="form-floating mb-2">
+          <input type="email" class="form-control" id="_dni" placeholder="name@example.com" [(ngModel)]="model._dni">
+          <label for="_dni">Dni asociado</label>
+        </div>
+        <button type="" class="mb-2 btn btn-sm btn-primary" (click)="filtrarEstado()">Filtrar</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
