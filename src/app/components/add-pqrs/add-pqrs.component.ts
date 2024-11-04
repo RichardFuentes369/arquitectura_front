@@ -42,6 +42,13 @@ export class AddPqrsComponent {
         icon: 'success',
         confirmButtonText: 'Cerrar'
       })
+      this.model._radicado.asunto = ''
+      this.model._radicado.descripcion = ''
+      this.model._propietario.nombres = ''
+      this.model._propietario.apellidos = ''
+      this.model._propietario.dni = ''
+      this.model._propietario.email = ''
+      this.model._propietario.contacto = ''
     }).catch(err =>{
       alert(err)
     })

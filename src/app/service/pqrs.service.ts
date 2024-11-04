@@ -32,6 +32,35 @@ export class PqrsService {
     })
   }
 
+  async editarPqrs(_modelo:any){
+
+    let complemento = 'pqrs-estado'
+    let filtros = ''
+
+    if(_modelo._nroRadicado != '' && _modelo._estado  != ''){
+      filtros += '?'
+      filtros += `_nroRadicado=${_modelo._nroRadicado}`
+      filtros += '&'
+      filtros += `_estado=${_modelo._estado}`
+    }
+
+
+
+    let urlCopleta = environment.apiUrl+complemento+filtros
+
+    return await axios.request({
+      method: 'put',
+      url: urlCopleta,
+      data: {
+        "_trazabilidad": {
+          "respuesta": _modelo._respuesta
+        }
+      }
+    })
+
+
+  }
+
   async crearPqrs(_modelo:any){
 
     let urlCopleta = environment.apiUrl

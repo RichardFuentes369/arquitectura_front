@@ -9,26 +9,26 @@
       <div class="col-sm-12 row">
           <div class="">
             <div class="form-floating mb-2">
-              <input type="email" class="form-control" id="_asunto" placeholder="name@example.com">
+              <input type="email" class="form-control" id="_asunto" placeholder="name@example.com" [(ngModel)]="model._nroRadicado">
               <label for="_asunto">Numero Radicado</label>
             </div>
             <div class="form-floating mb-2">
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="model._estado">
                 <option value="" select>--Seleccione--</option>
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">4</option>
-                <option value="">5</option>
-                <option value="">6</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
               </select>
               <label for="_descripcion">Estado</label>
             </div>
             <div class="form-floating mb-2">
-              <textarea class="form-control" id="_descripcion" style="resize:none; height: 16rem !important;" maxlength="350"></textarea>
+              <textarea class="form-control" id="_descripcion" style="resize:none; height: 16rem !important;" maxlength="350" [(ngModel)]="model._respuesta"></textarea>
               <label for="_descripcion">Descipcion</label>
             </div>
-            <button type="" class="mb-2 btn btn-sm btn-primary">Crear</button>
+            <button type="" class="mb-2 btn btn-sm btn-primary" (click)="ActualizarPqr()">Actualizar</button>
           </div>
       </div>
 
