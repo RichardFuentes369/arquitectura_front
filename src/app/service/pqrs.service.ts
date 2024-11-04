@@ -32,4 +32,15 @@ export class PqrsService {
     })
   }
 
+  async crearPqrs(_modelo:any){
+
+    let urlCopleta = environment.apiUrl
+
+    return await axios.request({
+      method: 'post',
+      url: urlCopleta+'pqrs-crear',
+      data: _modelo,
+    })
+  }
+
 }

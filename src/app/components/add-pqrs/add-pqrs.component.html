@@ -10,11 +10,11 @@
         <div class="col-sm-6">
           <div class="">
             <div class="form-floating mb-2">
-              <input type="email" class="form-control" id="_asunto" placeholder="name@example.com">
+              <input type="email" class="form-control" id="_asunto" placeholder="name@example.com" [(ngModel)]="model._radicado.asunto">
               <label for="_asunto">Adunto</label>
             </div>
             <div class="form-floating mb-2">
-              <textarea class="form-control" id="_descripcion" style="resize:none; height: 16rem !important;" maxlength="350"></textarea>
+              <textarea class="form-control" id="_descripcion" style="resize:none; height: 16rem !important;" maxlength="350" [(ngModel)]="model._radicado.descripcion"></textarea>
               <label for="_descripcion">Descripción</label>
             </div>
           </div>
@@ -22,26 +22,26 @@
         <div class="col-sm-6">
           <div class="">
             <div class="form-floating mb-2">
-              <input type="email" class="form-control" id="_asunto" placeholder="name@example.com">
+              <input type="email" class="form-control" id="_asunto" placeholder="name@example.com" [(ngModel)]="model._propietario.nombres">
               <label for="_asunto">Nombres</label>
             </div>
             <div class="form-floating mb-2">
-              <input type="email" class="form-control" id="_descripcion" placeholder="name@example.com">
+              <input type="email" class="form-control" id="_descripcion" placeholder="name@example.com" [(ngModel)]="model._propietario.apellidos">
               <label for="_descripcion">Apellidos</label>
             </div>
             <div class="form-floating mb-2">
-              <input type="email" class="form-control" id="_descripcion" placeholder="name@example.com">
+              <input type="email" class="form-control" id="_descripcion" placeholder="name@example.com"  [(ngModel)]="model._propietario.dni">
               <label for="_descripcion">Dni</label>
             </div>
             <div class="form-floating mb-2">
-              <input type="email" class="form-control" id="_descripcion" placeholder="name@example.com">
+              <input type="email" class="form-control" id="_descripcion" placeholder="name@example.com"  [(ngModel)]="model._propietario.email">
               <label for="_descripcion">Email</label>
             </div>
             <div class="form-floating mb-2">
-              <input type="email" class="form-control" id="_descripcion" placeholder="name@example.com">
+              <input type="email" class="form-control" id="_descripcion" placeholder="name@example.com"  [(ngModel)]="model._propietario.contacto">
               <label for="_descripcion">Contacto</label>
             </div>
-            <button type="" class="mb-2 btn btn-sm btn-primary">Crear</button>
+            <button type="" class="mb-2 btn btn-sm btn-primary" (click)="CrearPeticion()">Crear</button>
           </div>
         </div>
       </div>
