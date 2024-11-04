@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EstadoPqrsComponent } from './estado-pqrs.component';
+import { EstadoComponent } from './estado.component';
 
-describe('EstadoPqrsComponent', () => {
-  let component: EstadoPqrsComponent;
-  let fixture: ComponentFixture<EstadoPqrsComponent>;
+describe('EstadoComponent', () => {
+  let component: EstadoComponent;
+  let fixture: ComponentFixture<EstadoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EstadoPqrsComponent]
+      imports: [EstadoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(EstadoPqrsComponent);
+    fixture = TestBed.createComponent(EstadoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

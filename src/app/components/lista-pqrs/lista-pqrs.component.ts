@@ -17,23 +17,29 @@ export class ListaPqrsComponent implements OnInit{
   ){
   }
 
+  @Input()
+  mostrarListadoInicial: number = 0
+
   _misSolicitudes: any[] = []
 
   async ngOnInit() {
     this._misSolicitudes = []
-    let peticion = await this._pqrsService.getDataPQRS('','')
-    if(peticion.data.Lista != null){
-      for (const objeto of peticion.data.Lista) {
-        objeto.collapse = false
-        this._misSolicitudes.push(objeto)
+
+    if(this.mostrarListadoInicial == 0){
+      let peticion = await this._pqrsService.getDataPQRS('','')
+      if(peticion.data.Lista != null){
+        for (const objeto of peticion.data.Lista) {
+          objeto.collapse = false
+          this._misSolicitudes.push(objeto)
+        }
+      }else{
+        Swal.fire({
+          title: 'Advertencia!',
+          text: 'No hay pqrs creadas en el sistema',
+          icon: 'warning',
+          confirmButtonText: 'Cerrar'
+        })
       }
-    }else{
-      Swal.fire({
-        title: 'Advertencia!',
-        text: 'No hay pqrs creadas en el sistema',
-        icon: 'warning',
-        confirmButtonText: 'Cerrar'
-      })
     }
   }
 

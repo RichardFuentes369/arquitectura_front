@@ -2,8 +2,10 @@ import { Routes } from '@angular/router';
 
 import { WelcomeComponent } from './views/welcome/welcome.component'
 import { PqrsComponent } from './views/pqrs/pqrs.component'
-import { PqrsCrearComponent } from './views/pqrs-crear/pqrs-crear.component'
-import { PqrsEstadoComponent } from './views/pqrs-estado/pqrs-estado.component'
+import { AddComponent } from './views/add/add.component'
+
+import { EstadoComponent } from './views/estado/estado.component'
+import { TrazaComponent } from './views/traza/traza.component'
 
 export const routes: Routes = [
   {
@@ -17,13 +19,18 @@ export const routes: Routes = [
     component: PqrsComponent,
   },
   {
-    path: 'pqrs-crear',
-    title: 'PQRS-CREAR',
-    component: PqrsCrearComponent,
+    path: 'add',
+    title: 'Nueva - PQRS',
+    component: AddComponent,
   },
   {
-    path: 'pqrs-agregar-estado',
-    title: 'PQRS-ESTADO',
-    component: PqrsEstadoComponent,
+    path: 'updated',
+    title: 'Actualizar estado - PQRS',
+    component: EstadoComponent,
+  },
+  {
+    path: 'trazabilidad',
+    title: 'Trazabilidad - PQRS',
+    component: TrazaComponent,
   },
 ];

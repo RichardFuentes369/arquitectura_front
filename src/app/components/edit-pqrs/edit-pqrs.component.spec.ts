@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PqrsEstadoComponent } from './pqrs-estado.component';
+import { EditPqrsComponent } from './edit-pqrs.component';
 
-describe('PqrsEstadoComponent', () => {
-  let component: PqrsEstadoComponent;
-  let fixture: ComponentFixture<PqrsEstadoComponent>;
+describe('EditPqrsComponent', () => {
+  let component: EditPqrsComponent;
+  let fixture: ComponentFixture<EditPqrsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PqrsEstadoComponent]
+      imports: [EditPqrsComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PqrsEstadoComponent);
+    fixture = TestBed.createComponent(EditPqrsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
